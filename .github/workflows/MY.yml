@@ -1,16 +1,16 @@
 # This is a basic workflow to help you get started with Actions
 
-name: M3U generator
+name: MY
 
 # Controls when the action will run. 
 on:
   schedule:
     - cron: '0 0/3 * * *'
-
+    
   pull_request:
     branches:
       - main
-
+  
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,21 +33,25 @@ jobs:
       # Runs a set of commands using the runners shell 
       - name: config
         run: |
+          git pull
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-
+      
+      
       - name: Main
         run: |
           pwd
-          chmod +x autorun.sh
-          ./autorun.sh
-
+          chmod +x MY.sh
+          ./MY.sh
+        
       - name: git add
         run: |
           git add -A
-          ls -la
-
+          ls -la 
+          
       - name: commit & push
         run: |
-          git commit -m "links are updated"
+          git commit -m "Link updated"
           git push
+          
+          

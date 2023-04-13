@@ -13,12 +13,12 @@ def grab(url):
     response = s.get(url, timeout=15).text
     if '.m3u8' not in response:
         if windows:
-            print('https://raw.githubusercontent.com/AqFad2811/video/main/harapmaaf/harapmaaf.m3u8')
+            print('https://raw.githubusercontent.com/benmoose39/YouTube_to_m3u/main/assets/moose_na.m3u')
             return
         os.system(f'wget {url} -O temp.txt')
         response = ''.join(open('temp.txt').readlines())
         if '.m3u8' not in response:
-            print('https://raw.githubusercontent.com/AqFad2811/video/main/harapmaaf/harapmaaf.m3u8')
+            print('https://raw.githubusercontent.com/benmoose39/YouTube_to_m3u/main/assets/moose_na.m3u')
             return
     end = response.find('.m3u8') + 5
     tuner = 100
@@ -38,7 +38,7 @@ def grab(url):
 
 print('#EXTM3U')
 print('#EXT-X-VERSION:3')
-print('#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2560000')
+print('#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=5360000')
 s = requests.Session()
 with open('../buletinfm_info.txt') as f:
     for line in f:

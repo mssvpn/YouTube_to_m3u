@@ -41,8 +41,8 @@ jobs:
       - name: Main
         run: |
           pwd
-          chmod +x BuletinFM.sh
-          ./BuletinFM.sh
+          chmod +x buletinfm.sh
+          ./buletinfm.sh
         
       - name: git add
         run: |
